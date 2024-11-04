@@ -1,7 +1,6 @@
 package clinicproject.domain;
 
 import clinicproject.domain.Utils.Crud;
-import clinicproject.domain.Utils.Repository;
 
 public class Patient implements Crud<Patient> {
 
@@ -20,25 +19,25 @@ public class Patient implements Crud<Patient> {
     }
 
     @Override
-    public <CONN> void create(Patient model, Repository<CONN, Patient> repository) {
+    public void create(Patient model) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'create'");
     }
 
     @Override
-    public <CONN> Patient read(int id, Repository<CONN, Patient> repository) {
+    public Patient read(int id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'read'");
     }
     
     @Override
-    public <CONN> void update(Patient model, Repository<CONN, Patient> repository) {
+    public void update(Patient model) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
 
     @Override
-    public <CONN> void delete(int id, Repository<CONN, Patient> repository) {
+    public void delete(int id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'delete'");
     }

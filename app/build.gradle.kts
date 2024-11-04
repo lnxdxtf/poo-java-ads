@@ -23,10 +23,18 @@ dependencies {
 
     // This dependency is used by the application.
     implementation(libs.guava)
+
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    implementation("mysql:mysql-connector-java:8.0.33")
+
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
 java {
+
+    sourceCompatibility = JavaVersion.VERSION_11 
+    targetCompatibility = JavaVersion.VERSION_11 
+
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
     }
@@ -40,4 +48,15 @@ application {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+tasks.named<Jar>("jar") {
+    archiveFileName.set("clinicproject_app.jar") 
+    destinationDirectory.set(file("$buildDir")) 
+
+      manifest {
+        attributes(
+            "Main-Class" to application.mainClass
+        )
+    }
 }

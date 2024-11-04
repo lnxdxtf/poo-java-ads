@@ -9,5 +9,7 @@ public class App {
 
         // Run application wtih GUI
 
+        System.out.println("Hello, world!");
+
     }
 }
